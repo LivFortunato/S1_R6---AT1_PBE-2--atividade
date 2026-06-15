@@ -86,7 +86,7 @@ export async function initializeDatabase() {
                 id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                 valor_total DECIMAL(10,2) NOT NULL,
                 status ENUM("aberto", "finalizado", "pendente") NOT NULL,
-                data_pedido TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                data_pedido TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
             )
         `)
 
