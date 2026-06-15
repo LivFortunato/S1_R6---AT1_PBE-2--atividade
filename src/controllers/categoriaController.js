@@ -22,7 +22,7 @@ const categoriaController = {
 
     atualizar: async (req, res) => {
     try {
-        const id = Number(req.params.id);
+        const id = Number(req.query.id);
         const { nome, descricao } = req.body;
 
         if (isNaN(id) || !nome) {
