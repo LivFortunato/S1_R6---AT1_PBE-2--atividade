@@ -83,7 +83,7 @@ export async function initializeDatabase() {
 
         await tempConnection.query(`
             CREATE TABLE IF NOT EXISTS pedidos(
-                 id PRIMARY KEY INT NOT NULL AUTO_INCREMENT,
+                id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                 valor_total DECIMAL(10,2) NOT NULL,
                 status ENUM("aberto", "finalizado", "pendente") NOT NULL,
                 data_pedido TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
