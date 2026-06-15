@@ -10,7 +10,7 @@ const produtoController = {
             const idCategoria = Number(req.body.idCategoria); // converte o id da categoria recebido na requisição para número
             const valor = Number(req.body.valor); // converte o preço recebido na requisição para número
             const estoque = Number(req.body.estoque); // converte o estoque recebido na requisição para número
-            const caminhoImagem = `/uploads/images/${req.file.filename}`;
+            const caminhoImagem = `/images/${req.file.filename}`;
 
             const produto = Produto.criar({ idCategoria, nome, valor, estoque, caminhoImagem }); // utiliza o método estático criar da classe Produto para criar um objeto da classe Produto a partir dos dados recebidos na requisição
 
