@@ -57,7 +57,7 @@ export async function initializeDatabase() {
 
         const dbName = process.env.DB_DATABASE || 'deploy';
 
-
+        await tempConnection.query(`DROP DATABASE IF EXISTS \`${dbName}\`;`);
         await tempConnection.query(`CREATE DATABASE IF NOT EXISTS \`${dbName}\`;`);
         await tempConnection.query(`USE \`${dbName}\`;`);
 
@@ -70,12 +70,13 @@ export async function initializeDatabase() {
             );
         `);
 
-
         await tempConnection.query(`
             CREATE TABLE IF NOT EXISTS produtos (
                 id INT PRIMARY KEY AUTO_INCREMENT,
                 nome VARCHAR(30) NOT NULL,
-                valor DECIMAL(15,2) NOT NULL,
+                preco DECIMAL(15,2) NOT NULL,
+                estoque INT NOT NULL,
+                imagem VARCHAR(255) NULL,
                 id_categoria INT,
                 FOREIGN KEY (id_categoria) REFERENCES categorias(id)
             );
