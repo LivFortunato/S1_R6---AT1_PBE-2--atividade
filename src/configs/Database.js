@@ -55,7 +55,7 @@ export async function initializeDatabase() {
         });
 
 
-        const dbName = process.env.DB_DATABASE || 'db_s1_r3_r4-at5_pbe_2';
+        const dbName = process.env.DB_DATABASE || 'deploy';
 
 
         await tempConnection.query(`CREATE DATABASE IF NOT EXISTS \`${dbName}\`;`);
