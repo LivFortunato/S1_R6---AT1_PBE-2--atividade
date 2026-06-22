@@ -7,8 +7,9 @@ import path from 'path';
 
 
 const app = express();
-app.use(express.static(path.join(process.cwd(), '/uploads')));
 app.use(cors());
+app.use(express.static(path.join(process.cwd(), '/uploads')));
+
 
 app.use(express.json());
 app.use('/', routes);
